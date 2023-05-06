@@ -1,0 +1,23 @@
+# MediCore - SQL Server 2022 cho moi truong phat trien/hoc tap.
+# Dung: cp .env.example .env (dat SA_PASSWORD rieng) -> docker compose up -d
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: medicore-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${SA_PASSWORD:?Hay dat SA_PASSWORD trong file .env}"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - medicore-data:/var/opt/mssql
+      - ./database:/database:ro
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -C -Q \"SELECT 1\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  medicore-data:
