@@ -1,6 +1,6 @@
 # CSDL Quản lý Bệnh viện — MediCore (HQTCSDL_BenhVien)
 
-Cơ sở dữ liệu quản lý bệnh viện đa khoa (khám ngoại trú, hồ sơ bệnh án điện tử, viện phí & BHYT) trên **Microsoft SQL Server / T-SQL**, do Nhóm 2 — HUIT thiết kế và xây dựng cho môn Hệ quản trị cơ sở dữ liệu.
+Cơ sở dữ liệu quản lý bệnh viện đa khoa (khám ngoại trú, hồ sơ bệnh án điện tử, viện phí & BHYT) trên **Microsoft SQL Server / T-SQL**, do Nhóm 2  thiết kế và xây dựng cho môn Hệ quản trị cơ sở dữ liệu.
 
 Đặc điểm thiết kế của MediCore:
 
